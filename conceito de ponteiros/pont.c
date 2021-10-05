@@ -10,7 +10,7 @@ int main(){
 
  printf("i1 = %d \n ", i1);
  printf("p1 = %d \n ", p1);
- printf("w = %d \n ", w);
+ printf(" w = %d \n ", w );
 
     return 0;
 }
