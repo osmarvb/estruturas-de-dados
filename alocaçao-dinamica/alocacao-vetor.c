@@ -1,21 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-
-    int i  = 1;
-    int *p1 = &i;
-    int *p2;
-    //    casting        tam * tipo
-    p2 = (int*) malloc (sizeof(int));
-    *p2 = 5;
-    printf("i = %u \n", &i);
-    printf("p1 = %u \n", p1);
+int main()
+{
+    //vetor armazena somente o endereço do primeiro indice do vetor
+    int *vet2;
+    //    casting       tamvet  tam * tipo
+    vet2 = (int *)calloc(4, sizeof(int));
+    int *p2 = vet2;
+    //printf("i = %u \n", &i);
+    printf("vet2 = %u \n", vet2);
     printf("p2 = %u \n", p2);
-    
-    free(p2); //marca o endereço como livre
-    p2 = NULL;
-    printf("free p2 = %u \n", p2);
 
+    vet2[0] = 50;
+    *(vet2 + 1) = 60;
+    p2[2] = 70;
+    *(p2 + 3) = 80;
+
+    free(vet2);
+    vet2 = p2 = NULL;
+    
     return 0;
-} 
+}
